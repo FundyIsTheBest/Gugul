@@ -1,0 +1,45 @@
+<html>
+<head>
+  
+</head>
+<body>
+  <input type="text" id="FindUrl" placeholder="Type URL and search!" style="width:80%; background-color: lightgrey; border-radius: 8px;">
+  <button onClick="openURL()" style="width:18%; background-color:white">Search</button>
+  <br><br><b>
+  <div style="text-align:center; font-size:60">
+    
+      <span style="color:blue">G</span>
+      <span style="color:red">o</span>
+      <span style="color:yellow">o</span>
+      <span style="color:blue">g</span>
+      <span style="color:green">l</span>
+      <span style="color:red">e</span>
+    
+  </div></b>
+  <br><br><br>
+  <div style="text-align:center">
+    <input type="text" id="search" placeholder="Type to search!" style="width: 50%; min-width:200px; background-color:lightgray; border-radius:8px">
+    <button onClick="Search()" style="background-color: white">Search</button>
+  </div>
+
+
+
+  <script>
+
+
+    function Search(){
+      let inputTxt=document.getElementById("search").value;
+      let url=`https://www.google.com/search?q=${encodeURIComponent(inputTxt)}`
+      window.location.href=url
+    }
+
+    function openURL(){
+      let UrlOpen=document.getElementById("FindUrl").value
+      if (!UrlOpen.startsWith("http://") && !UrlOpen.startsWith("https://")){
+        UrlOpen = "https://"+UrlOpen
+      }
+      window.location.href=UrlOpen
+    }
+  </script>
+</body>
+</html>
